@@ -1,5 +1,3 @@
-from abc import ABC, abstractmethod
-
 
 class GameObject:
     """Общие свойства любого объекта на игровой карте."""
@@ -60,21 +58,14 @@ class Building(GameObject):
         self._built = True
 
 
-class Attacker(ABC):
-    """Интерфейс для тех, кто умеет атаковать."""
-
-    @abstractmethod
-    def attack(self, unit: Unit) -> None:
-        pass
+class Attacker:
+    def attack(self, unit):
+        raise NotImplementedError
 
 
-class Moveable(ABC):
-    """Интерфейс для тех, кто умеет перемещаться."""
-
-    @abstractmethod
-    def moveTo(self, x: int, y: int) -> None:
-        pass
-
+class Moveable:
+    def moveTo(self, x, y):
+        raise NotImplementedError
 
 class Archer(Unit, Attacker, Moveable):
     """Лучник: юнит, который умеет атаковать и двигаться."""
