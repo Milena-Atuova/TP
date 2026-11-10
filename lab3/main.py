@@ -18,3 +18,20 @@ luxury = LuxuryRoomCreator().create_room()
 
 print(standard.get_info())
 print(luxury.get_info())
+
+
+
+from abstract_factory.factories import EconomyFactory, PremiumFactory
+
+print("\nAbstract Factory:")
+
+economy = EconomyFactory()
+premium = PremiumFactory()
+
+print("Эконом:")
+print(economy.create_room().get_info())
+print(economy.create_service().get_info())
+
+print("Премиум:")
+print(premium.create_room().get_info())
+print(premium.create_service().get_info())
