@@ -35,3 +35,20 @@ print(economy.create_service().get_info())
 print("Премиум:")
 print(premium.create_room().get_info())
 print(premium.create_service().get_info())
+
+
+from builder.booking_builder import BookingBuilder
+
+print("\nBuilder:")
+
+booking = (
+    BookingBuilder()
+    .set_guest("Милена")
+    .set_room("Люкс")
+    .set_nights(3)
+    .add_breakfast()
+    .add_transfer()
+    .build()
+)
+
+booking.show_info()
