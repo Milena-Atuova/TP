@@ -36,3 +36,20 @@ print(guest_check.check(booking))
 
 booking["available_rooms"] = 0
 print(guest_check.check(booking))
+
+
+
+
+from iterator.room_collection import HotelRooms
+
+print("\nIterator — номера отеля")
+
+hotel = HotelRooms()
+
+hotel.add_room(101)
+hotel.add_room(102)
+hotel.add_room(201)
+hotel.add_room(202)
+
+for room in hotel:
+    print("Номер:", room)
